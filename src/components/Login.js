@@ -7,6 +7,11 @@ export default function Login() {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    console.log(emailRegex.test(email))
+
+
     if(email === "" || password === ""){
         console.log("Los campos no pueden estar vacios")
     }
