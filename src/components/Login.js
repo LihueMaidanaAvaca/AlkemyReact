@@ -21,6 +21,12 @@ export default function Login() {
         console.log("Se necesita un formato de correo valido")
         return;
     }
+
+    if(email !== "challenge@alkemy.org" || password !== "react"){
+        console.log("Se necesita un formato de correo valido")
+        return;
+    }
+
     console.log("Todo ok!");
     axios
       .post('http://challenge-react.alkemy.org', { email, password })
