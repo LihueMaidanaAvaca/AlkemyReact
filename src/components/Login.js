@@ -14,6 +14,12 @@ export default function Login() {
 
     if(email === "" || password === ""){
         console.log("Los campos no pueden estar vacios")
+        return;
+    }
+
+    if(email !== "" && !emailRegex.test(email)){
+        console.log("Se necesita un formato de correo valido")
+        return;
     }
    }
 
@@ -23,7 +29,7 @@ export default function Login() {
     <form onSubmit={submitHandler}>
         <label>
           <span>Correo Electronico:</span><br/>
-          <input type="email" name='email'/>
+          <input type="text" name='email'/>
         </label>
         <br/>
         <label>
