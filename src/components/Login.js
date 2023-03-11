@@ -1,4 +1,4 @@
-import React from 'react'
+import axios from "axios";
 
 export default function Login() {
 
@@ -21,6 +21,12 @@ export default function Login() {
         console.log("Se necesita un formato de correo valido")
         return;
     }
+    console.log("Todo ok!");
+    axios
+      .post('http://challenge-react.alkemy.org', { email, password })
+      .then(res => {
+        console.log(res.data)
+      })
    }
 
   return (
