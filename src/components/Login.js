@@ -3,22 +3,20 @@ import swAlert from '@sweetalert/with-react'
 
 export default function Login() {
 
-   swAlert(
-     <h2>This will work!</h2>
-   )
-
-   const submitHandler = e => {
+  
+  const submitHandler = e => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+    
     console.log(emailRegex.test(email))
-
-
+    
+    
     if(email === "" || password === ""){
-        console.log("Los campos no pueden estar vacios")
+      
+      swAlert(<h2>Los campos no pueden estar vacios</h2>)
         return;
     }
 
