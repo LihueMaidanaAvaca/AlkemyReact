@@ -1,6 +1,11 @@
 import axios from "axios";
+import swAlert from '@sweetalert/with-react'
 
 export default function Login() {
+
+   swAlert(
+     <h2>This will work!</h2>
+   )
 
    const submitHandler = e => {
     e.preventDefault();
