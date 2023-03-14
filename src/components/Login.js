@@ -1,9 +1,13 @@
 import axios from "axios";
-import swAlert from '@sweetalert/with-react'
+import swAlert from '@sweetalert/with-react';
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
 
-  
+  const history = useNavigate();
+
+  console.log(history)
+
   const submitHandler = e => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -36,7 +40,8 @@ export default function Login() {
       .then(res => {
         swAlert(<h2>Perfecto, ingresaste correctamente</h2>);
         const tokenRecibido = res.data.token;
-        localStorage.setItem('token', tokenRecibido)
+        localStorage.setItem('token', tokenRecibido);
+        history('/listado')
       })
    }
 
