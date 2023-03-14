@@ -34,8 +34,9 @@ export default function Login() {
     axios
       .post('http://challenge-react.alkemy.org', { email, password })
       .then(res => {
-        swAlert(<h2>Perfecto, ingresaste correctamente</h2>)
-        console.log(res.data)
+        swAlert(<h2>Perfecto, ingresaste correctamente</h2>);
+        const tokenRecibido = res.data.token;
+        localStorage.setItem('token', tokenRecibido)
       })
    }
 
